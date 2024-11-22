@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "ES2015", // This is fine for Workers.
+    "module": "ESNext", // Use ESNext for better compatibility with modern tooling.
+    "moduleResolution": "node", // "node" is better unless you have a specific reason for "Bundler".
+    "strict": true,
+    "skipLibCheck": true, // Skips type checks for libraries.
+    "lib": [
+      "ES2015"
+    ],
+    "types": [
+      "@cloudflare/workers-types/2023-07-01"
+    ],
+    "jsx": "react-jsx", // Correct for JSX support.
+    "jsxImportSource": "hono/jsx",
+    "outDir": "./dist", // Specify an output directory for compiled files.
+    "rootDir": "./src", // Ensure TypeScript processes only files in `src`.
+    "esModuleInterop": true, // Allows better handling of CommonJS modules.
+    "allowJs": true, // Allows JavaScript files if needed.
+    "sourceMap": true // Generates source maps for debugging.
+  },
+  "include": [
+    "src/**/*" // Includes all files in the `src` directory.
+  ],
+  "exclude": [
+    "node_modules" // Excludes `node_modules`.
+  ]
+}
